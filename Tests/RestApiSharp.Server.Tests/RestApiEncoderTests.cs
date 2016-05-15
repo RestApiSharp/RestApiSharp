@@ -1,7 +1,5 @@
-﻿using System.Dynamic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json.Linq;
 using NUnit.Framework;
-using RestApiSharp.Common.Models;
 
 namespace RestApiSharp.Server.Tests
 {
@@ -9,24 +7,20 @@ namespace RestApiSharp.Server.Tests
     public class RestApiEncoderTests
     {
         [Test]
-        public void Encode_When_Results()
+        public void Encode_WhenCalled_RootIsJsonObject()
         {
             //Arrange
-            var doc = new RestApiDocument
-            {
-                Data = new RestApiResourceObject
-                {
-                    Type = "FakeType",
-                    Id = "1",
-                    Attributes = new ExpandoObject()
-                }
-            };
+            var encoder = new RestApiEncoder();
 
-            
-            //IDictionary<string, object> attr = doc.Data.Attributes
-            //attr.Add("Name", "Tom");
+            //Act
+            var json = encoder.EncodeDocument(new FakeObject());
 
-            var json = JsonConvert.SerializeObject(doc, Formatting.Indented);
+            Assert.That(JObject.Parse(json), Is.Not.Null);
         }
+    }
+
+    public class FakeObject
+    {
+        
     }
 }
