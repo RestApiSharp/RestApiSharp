@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+MonoAndroid10+Xamarin.iOS10+MonoTouch10": {
+      "wrappedProject": "../../RestApiSharp.Common/RestApiSharp.Common.csproj",
+      "bin": {
+        "assembly": "../../RestApiSharp.Common/obj/{configuration}/RestApiSharp.Common.dll",
+        "pdb": "../../RestApiSharp.Common/obj/{configuration}/RestApiSharp.Common.pdb"
+      }
+    }
+  }
+}

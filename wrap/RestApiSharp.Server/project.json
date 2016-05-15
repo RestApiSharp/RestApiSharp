@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+MonoAndroid10+Xamarin.iOS10+MonoTouch10": {
+      "wrappedProject": "../../RestApiSharp.Server/RestApiSharp.Server.csproj",
+      "bin": {
+        "assembly": "../../RestApiSharp.Server/obj/{configuration}/RestApiSharp.Server.dll",
+        "pdb": "../../RestApiSharp.Server/obj/{configuration}/RestApiSharp.Server.pdb"
+      },
+      "dependencies": {
+        "RestApiSharp.Common": "1.0.0-*",
+        "Newtonsoft.Json": "8.0.3"
+      }
+    }
+  }
+}
